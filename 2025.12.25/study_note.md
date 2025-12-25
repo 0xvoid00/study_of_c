@@ -64,3 +64,6 @@ int main(void) {
     return 0;
 }
 ```
+
+> [!Important]
+> Call by Reference
