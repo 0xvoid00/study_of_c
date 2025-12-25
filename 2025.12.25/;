@@ -81,11 +81,3 @@ int arr[3] = { 10, 20, 30 };
 
 > <!TIP>
 > 여기서 배열의 이름은 배열의 시작 주소를 가리키는 포인터 상수(Constant Pointer, 다른 곳을 가리키도 변경 불가능)
-
-### 포인터 연산 (Pointer Arithmetic)
-
-> 자료형의 크기만큼 점프 (Stride, 한 걸음 이동)
-
-- `char *` +1 | +1 (memory)
-- `int *` +1 | +4 (memory)
-- `double *` +1 | +8 (memory)
