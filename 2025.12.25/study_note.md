@@ -66,4 +66,4 @@ int main(void) {
 ```
 
 > [!Important]
-> Call by Reference
+> **Call by Reference**라고 한다. 반대 개념으로는 Call by Value가 있다.
