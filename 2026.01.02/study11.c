@@ -15,36 +15,50 @@ Node* insert(Node *root, int data) {
     return newNode;
   }
 
-  if (data < root->data) { // 아래 줄이 포인트
+  if (data < root->data) {
     root->left = insert(root->left, data);
   }
-  else if (data > root->data) { // 아래 줄이 포인트
+  else if (data > root->data) { // data 중복일 경우 무시하기 위해 else 가 아닌 else if 사용
     root->right = insert(root->right, data);
   }
-
   return root;
 }
 
 void inorder(Node *root) {
-  if (root == NULL) {
+  if (root == NULL)
     return;
-  }
 
+  // Use in-order traversal
   inorder(root->left);
-
   printf("%d -> ", root->data);
-
   inorder(root->right);
+}
+
+void freeTree(Node *root) {
+  if (root == NULL)
+    return;
+
+  freeTree(root->left);
+  freeTree(root->right);
+
+  printf("%d 해제\n", root->data);
+  free(root);
 }
 
 int main(void) {
   Node *root = NULL;
 
+  root = insert(root, 30);
   root = insert(root, 10);
-  insert(root, 5);
-  insert(root, 17);
+  root = insert(root, 50);
+  root = insert(root, 20);
+  root = insert(root, 40);
 
+  printf("--- 자동 정렬 결과 ---\n");
   inorder(root);
+  printf("End\n");
 
+  freeTree(root);
+  
   return 0;
 }
